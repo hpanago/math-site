@@ -37,7 +37,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('p13111','test','iliana panagopoulou',1),('test1','test1','test user 1',0);
+INSERT INTO `users` VALUES ('p13111','test','iliana panagopoulou',1),('test1','test1','test user 1',0),('maria','maria','maria',1),('giorgos','giorgos','giorgos',0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-03 20:24:13
+-- Dump completed on 2020-05-09  0:26:44

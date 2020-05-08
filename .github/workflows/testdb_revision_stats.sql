@@ -16,13 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `stats`
+-- Table structure for table `revision_stats`
 --
 
-DROP TABLE IF EXISTS `stats`;
+DROP TABLE IF EXISTS `revision_stats`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `stats` (
+CREATE TABLE `revision_stats` (
   `username` varchar(255) DEFAULT NULL,
   `prop1` int DEFAULT NULL,
   `prop2` int DEFAULT NULL,
@@ -35,18 +35,18 @@ CREATE TABLE `stats` (
   `prop9` int DEFAULT NULL,
   `prop10` int DEFAULT NULL,
   KEY `username` (`username`),
-  CONSTRAINT `stats_ibfk_1` FOREIGN KEY (`username`) REFERENCES `users` (`username`)
+  CONSTRAINT `revision_stats_ibfk_1` FOREIGN KEY (`username`) REFERENCES `users` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `stats`
+-- Dumping data for table `revision_stats`
 --
 
-LOCK TABLES `stats` WRITE;
-/*!40000 ALTER TABLE `stats` DISABLE KEYS */;
-INSERT INTO `stats` VALUES ('p13111',0,6,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('test1',5,6,NULL,NULL,NULL,NULL,NULL,NULL,7,NULL),('maria',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('test1',5,6,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('giorgos',NULL,7,NULL,NULL,NULL,NULL,2,NULL,NULL,10),('giorgos',5,6,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
-/*!40000 ALTER TABLE `stats` ENABLE KEYS */;
+LOCK TABLES `revision_stats` WRITE;
+/*!40000 ALTER TABLE `revision_stats` DISABLE KEYS */;
+INSERT INTO `revision_stats` VALUES ('giorgos',1,6,1,1,2,2,NULL,NULL,1,1);
+/*!40000 ALTER TABLE `revision_stats` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -58,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-09  0:26:44
+-- Dump completed on 2020-05-09  0:26:43

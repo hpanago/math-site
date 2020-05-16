@@ -102,33 +102,7 @@ namespace WpfApplication1
             newform.Show();
         }
 
-        // Generate and display 5 random integers between 0 and 100.
-        /*public int Create_Numbers()
-        {
-            // List<int> integers = new List<int>();
-            int[] integers = new int[11];
-            Console.WriteLine("Ten random integers between 1 and 10:");
-            for (int ctr = 1; ctr <= 10; ctr++)
-            {
-                // Console.Write("{0,8:N0}", random.Next(11));
-                //integers.Add(random.Next(11));
-                integers[ctr] = random.Next(1, 11);
-
-            }
-            //Console.WriteLine(integers);
-            //Console.WriteLine(integers[1]);
-            try
-            {
-                revision_stats.Add(integers[2], 0);
-                revision_quest.Add(integers[2], 0);
-            }
-            catch
-            {
-                revision_quest[integers[2]] = 0;
-            }
-            return integers[2];
-
-        }*/
+        
         
         private void Do_test(object sender, RoutedEventArgs e)
         {
@@ -543,6 +517,12 @@ namespace WpfApplication1
             newtest.right_answer10 = RandomNumber10 * q10;
             revision = true;
             newtest.i = i;
+            for (int y = 0; y < 10; y++)
+            {
+                Console.Write(myIntArray[y]);
+                Console.Write(myIntArray2[y]);
+                Console.Write(i);
+            }
             this.Close();
             newtest.Show();
         

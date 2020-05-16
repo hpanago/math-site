@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
 using System.Data;//math
+using System.ComponentModel;
 
 namespace WpfApplication1
 {
@@ -229,16 +230,16 @@ namespace WpfApplication1
             }
             
         }
-        public string Compute(decimal one, decimal two)
+        public string Compute(float one, float two)
         {
             string value = "Not Found";
             try
             {
-                MessageBox.Show(one.ToString());
-                MessageBox.Show(two.ToString());
-                decimal math = (one + two) / 11m ;
-                MessageBox.Show(math.ToString());
-                value = math.ToString();
+               // MessageBox.Show(one.ToString());
+               // MessageBox.Show(two.ToString());
+                float math = ((one + two) / 11) *100;
+               // MessageBox.Show(math.ToString());
+                value = Math.Round(math, 2).ToString();
             }
             catch
             {
@@ -312,6 +313,7 @@ namespace WpfApplication1
             prop9.Content = "Αποτελέσματα στην προπαίδεια του 9: " + result9.ToString();
             prop10.Content = "Αποτελέσματα στην προπαίδεια του 10: " + result10.ToString();
             Console.WriteLine("populating done."); //this is used for debug purposes
+            
         }
         private void Log_out(object sender, MouseButtonEventArgs e)
         {

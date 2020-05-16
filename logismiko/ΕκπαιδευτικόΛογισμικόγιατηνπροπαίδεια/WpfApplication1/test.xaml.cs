@@ -37,7 +37,20 @@ namespace WpfApplication1
          public int right_answer10;
          public int i;
          int an,apotelesmata,erwthseis;
-        
+
+        Dictionary<int, int> swstes_apadhseis = new Dictionary<int, int>
+        {
+            { 1,0 },
+            { 2,0 },
+            { 3,0 },
+            { 4,0 },
+            { 5,0 },
+            { 6,0 },
+            { 7,0 },
+            { 8,0 },
+            { 9,0 },
+            { 10,0 }
+        };
         private void Answer1(object sender, KeyEventArgs e)
          {
             string answer1 = an1.Text;
@@ -60,8 +73,8 @@ namespace WpfApplication1
                         an1.Background = Brushes.Green;
                         progressBar1.Value += 10;
                         apotelesmata += 1;
-                       // προπαίδειες.revision_stats[προπαίδειες.q1] += 1;
-                       // προπαίδειες.revision_quest[προπαίδειες.q1] += 1;
+                        swstes_apadhseis[προπαίδειες.q1] += 1;
+                      
                     }
                     else
                     {
@@ -93,8 +106,8 @@ namespace WpfApplication1
                         an2.Background = Brushes.Green;
                         progressBar1.Value += 10;
                         apotelesmata += 1;
-                       // προπαίδειες.revision_stats[προπαίδειες.q2] += 1;
-                       // προπαίδειες.revision_quest[προπαίδειες.q2] += 1;
+                        swstes_apadhseis[προπαίδειες.q2] += 1;
+
                     }
                     else
                     {
@@ -126,8 +139,8 @@ namespace WpfApplication1
                         an3.Background = Brushes.Green;
                         progressBar1.Value += 10;
                         apotelesmata += 1;
-                       // προπαίδειες.revision_stats[προπαίδειες.q3] += 1;
-                        //προπαίδειες.revision_quest[προπαίδειες.q3] += 1;
+                        swstes_apadhseis[προπαίδειες.q3] += 1;
+
 
                     }
                     else
@@ -160,8 +173,7 @@ namespace WpfApplication1
                         an4.Background = Brushes.Green;
                         progressBar1.Value += 10;
                         apotelesmata += 1;
-                       // προπαίδειες.revision_stats[προπαίδειες.q4] += 1;
-                       // προπαίδειες.revision_quest[προπαίδειες.q4] += 1;
+                        swstes_apadhseis[προπαίδειες.q4] += 1;
 
                     }
                     else
@@ -194,8 +206,8 @@ namespace WpfApplication1
                         an5.Background = Brushes.Green;
                         progressBar1.Value += 10;
                         apotelesmata += 1;
-                       // προπαίδειες.revision_stats[προπαίδειες.q5] += 1;
-                      //  προπαίδειες.revision_quest[προπαίδειες.q5] += 1;
+                        swstes_apadhseis[προπαίδειες.q5] += 1;
+
                     }
                     else
                     {
@@ -227,8 +239,8 @@ namespace WpfApplication1
                         an6.Background = Brushes.Green;
                         progressBar1.Value += 10;
                         apotelesmata += 1;
-                        //προπαίδειες.revision_stats[προπαίδειες.q6] += 1;
-                        //προπαίδειες.revision_quest[προπαίδειες.q6] += 1;
+                        swstes_apadhseis[προπαίδειες.q6] += 1;
+
                     }
                     else
                     {
@@ -260,8 +272,8 @@ namespace WpfApplication1
                         an7.Background = Brushes.Green;
                         progressBar1.Value += 10;
                         apotelesmata += 1;
-                       // προπαίδειες.revision_stats[προπαίδειες.q7] += 1;
-                       // προπαίδειες.revision_quest[προπαίδειες.q7] += 1;
+                        swstes_apadhseis[προπαίδειες.q7] += 1;
+
                     }
                     else
                     {
@@ -293,8 +305,8 @@ namespace WpfApplication1
                         an8.Background = Brushes.Green;
                         progressBar1.Value += 10;
                         apotelesmata += 1;
-                      //  προπαίδειες.revision_stats[προπαίδειες.q8] += 1;
-                       // προπαίδειες.revision_quest[προπαίδειες.q8] += 1;
+                        swstes_apadhseis[προπαίδειες.q8] += 1;
+
                     }
                     else
                     {
@@ -326,8 +338,8 @@ namespace WpfApplication1
                         an9.Background = Brushes.Green;
                         progressBar1.Value += 10;
                         apotelesmata += 1;
-                       // προπαίδειες.revision_stats[προπαίδειες.q9] += 1;
-                     //   προπαίδειες.revision_quest[προπαίδειες.q9] += 1;
+                        swstes_apadhseis[προπαίδειες.q9] += 1;
+
                     }
                     else
                     {
@@ -359,8 +371,8 @@ namespace WpfApplication1
                         an10.Background = Brushes.Green;
                         progressBar1.Value += 10;
                         apotelesmata += 1;
-                        //προπαίδειες.revision_stats[προπαίδειες.q10] += 1;
-                        //προπαίδειες.revision_quest[προπαίδειες.q10] += 1;
+                        swstes_apadhseis[προπαίδειες.q10] += 1;
+
                     }
                     else
                     {
@@ -401,18 +413,20 @@ namespace WpfApplication1
             //so as to save progress data in the database
             //related to the specific number for which 
             //we are doing the test -> Store_InDB(int number)
-            int number = MainWindow.prop_number;
-           // this is for debugging MessageBox.Show(number.ToString());
-          if (προπαίδειες.revision == true)
-            {
-                //Store_Revision();
-                MessageBox.Show("error");
-            }
-          else
-            {
-               Store_InDB(number);
 
+            int number = MainWindow.prop_number;
+            // this is for debugging MessageBox.Show(number.ToString());
+
+            if (προπαίδειες.revision == true)
+            {
+                MessageBox.Show("REVISION storing");
+                Store_Revision();
             }
+            else
+            { 
+                Store_InDB(number);
+            }
+            
           }
         static Random random = new Random();
         int RandomNumber1, RandomNumber2, RandomNumber3, RandomNumber4, RandomNumber5;
@@ -707,49 +721,26 @@ namespace WpfApplication1
             newForm.Show();
         }
 
-       /* public void Store_Revision ()
-        { 
-            //so now revision_stats has eg prop1 as key an correct answers as value
-            string logged = Αρχική.Get_Username();
-            // this is for debbugging MessageBox.Show(logged.ToString());
-           
+        public void Store_Revision ()
+         { 
+             //so now revision_stats has eg prop1 as key an correct answers as value
+             string logged = Αρχική.Get_Username();
+             // this is for debbugging MessageBox.Show(logged.ToString());
 
-            string connStr = @"server=localhost;userid=root;password=root;database=testdb";
-            MySqlConnection conn = new MySqlConnection(connStr);
-            try
-            {
-                Console.WriteLine("Connecting to MySQL...");//this is used for debug purposes
-                conn.Open();
-                string sql = "update testdb.revision_stats set prop" + προπαίδειες.revision_stats[προπαίδειες.q1] + "=" + apotelesmata + " WHERE username=" + '"' + $"{ logged }" + '"';
-                Console.WriteLine(sql);
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-                MySqlDataReader rdr = cmd.ExecuteReader();
-                Console.WriteLine(rdr); //this is used for debug purposes
-                Console.WriteLine(apotelesmata);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString()); //this is used for debug purposes
-            }
-            conn.Close();
-            Console.WriteLine("Done."); //this is used for debug purposes
-            
-            string logged = Αρχική.Get_Username();
-            string connStr = @"server=localhost;userid=root;password=root;database=testdb";
-            MySqlConnection conn = new MySqlConnection(connStr);
-            string sql = "update testdb.revision_stats set prop{0}={1} WHERE username="  +"'" + $"{ logged }" +"'";
 
-            foreach (KeyValuePair<int, int> kvp in προπαίδειες.revision_stats)
-            {
-                string query_1 = "";
-                query_1 += string.Format(sql, kvp.Key, kvp.Value);
-                Console.WriteLine(query_1);
+             string connStr = @"server=localhost;userid=root;password=root;database=testdb";
+             MySqlConnection conn = new MySqlConnection(connStr);
+            for (int loop = 1; loop < 11; loop++) {
                 try
                 {
+                    Console.WriteLine("Connecting to MySQL...");//this is used for debug purposes
                     conn.Open();
-                    Console.WriteLine(query_1);
-                    MySqlCommand cmd = new MySqlCommand(query_1, conn);
+                    string sql = "update testdb.revision_stats set prop" + loop + "=" + swstes_apadhseis[loop] + " WHERE username=" + '"' + $"{ logged }" + '"';
+                    Console.WriteLine(sql);
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
                     MySqlDataReader rdr = cmd.ExecuteReader();
+                    Console.WriteLine(rdr); //this is used for debug purposes
+                    Console.WriteLine(apotelesmata);
                     conn.Close();
                 }
                 catch (Exception ex)
@@ -758,19 +749,10 @@ namespace WpfApplication1
                     conn.Close();
                 }
             }
-            foreach (KeyValuePair<int, int> kvp in προπαίδειες.revision_quest)
-            {
-                // this dictionary has the "how many questions of this type are there?"
-                string foo = "";
-                foo += string.Format("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
-                Console.WriteLine(foo);
-            }
-
-    
-
-
-        } */
-
+             //conn.Close();
+             Console.WriteLine("Done."); //this is used for debug purposes
+         } 
+      
         public void Store_InDB(int number)
         {
 

@@ -262,7 +262,8 @@ namespace WpfApplication1
 
             }
         }
-    
+
+      
         private void Do_test_all(object sender, RoutedEventArgs e)
         {
             var newtest = new test();
@@ -274,6 +275,7 @@ namespace WpfApplication1
             q1 = random.Next(1, 11);
             newtest.q1.Content = "1) " + RandomNumber1 + " x " + q1;
             newtest.right_answer1 = RandomNumber1 * q1;
+           
             for (int y = 0; y < 10; y++)
             {
                 if (myIntArray[y] == RandomNumber1)
@@ -517,12 +519,7 @@ namespace WpfApplication1
             newtest.right_answer10 = RandomNumber10 * q10;
             revision = true;
             newtest.i = i;
-            for (int y = 0; y < 10; y++)
-            {
-                Console.Write(myIntArray[y]);
-                Console.Write(myIntArray2[y]);
-                Console.Write(i);
-            }
+           
             this.Close();
             newtest.Show();
         

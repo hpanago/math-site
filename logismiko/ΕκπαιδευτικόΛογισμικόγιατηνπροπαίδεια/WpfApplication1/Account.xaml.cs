@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
+using System.Data;//math
 
 namespace WpfApplication1
 {
@@ -158,8 +160,43 @@ namespace WpfApplication1
             //conn.Close();
             Console.WriteLine("populating user info done."); //this is used for debug purposes
         }
-    
-    
+
+        public static int stats1;
+        public static int stats2;
+        public static int stats3;
+        public static int stats4;
+        public static int stats5;
+        public static int stats6;
+        public static int stats7;
+        public static int stats8;
+        public static int stats9;
+        public static int stats10;
+        public static int Rstats1;
+        public static int Rstats2;
+        public static int Rstats3;
+        public static int Rstats4;
+        public static int Rstats5;
+        public static int Rstats6;
+        public static int Rstats7;
+        public static int Rstats8;
+        public static int Rstats9;
+        public static int Rstats10;
+
+        public string Compute(int one, int two)
+        {
+            string value = "Not Found";
+            try
+            {
+                int math = (one + two) / 11;
+
+                value = math.ToString();
+            }
+            catch
+            {
+                value = "Not Found";
+            }
+            return value;
+        }
         private void Populate_List(string search_name)
         {
             string connStr = @"server=localhost;userid=root;password=root;database=testdb";
@@ -177,17 +214,19 @@ namespace WpfApplication1
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
+                    // prop1.Content = "propaideia tou 1=" + (rdr["prop1"].ToString());
 
-                    prop1.Content = "propaideia tou 1=" + (rdr["prop1"].ToString());
-                    prop2.Content = "propaideia tou 2=" + (rdr["prop2"].ToString());
-                    prop3.Content = "propaideia tou 3=" + (rdr["prop3"].ToString());
-                    prop4.Content = "propaideia tou 4=" + (rdr["prop4"].ToString());
-                    prop5.Content = "propaideia tou 5=" + (rdr["prop5"].ToString());
-                    prop6.Content = "propaideia tou 6=" + (rdr["prop6"].ToString());
-                    prop7.Content = "propaideia tou 7=" + (rdr["prop7"].ToString());
-                    prop8.Content = "propaideia tou 8=" + (rdr["prop8"].ToString());
-                    prop9.Content = "propaideia tou 9=" + (rdr["prop9"].ToString());
-                    prop10.Content = "propaideia tou 10=" + (rdr["prop10"].ToString());
+                    stats1 = Int32.Parse(rdr["prop1"].ToString());
+                    Console.Write(stats1);
+                    stats2 = Int32.Parse(rdr["prop2"].ToString());
+                    stats3 = Int32.Parse(rdr["prop3"].ToString());
+                    stats4 = Int32.Parse(rdr["prop4"].ToString());
+                    stats5 = Int32.Parse(rdr["prop5"].ToString());
+                    stats6 = Int32.Parse(rdr["prop6"].ToString());
+                    stats7 = Int32.Parse(rdr["prop7"].ToString());
+                    stats8 = Int32.Parse(rdr["prop8"].ToString());
+                    stats9 = Int32.Parse(rdr["prop9"].ToString());
+                    stats10 = Int32.Parse(rdr["prop10"].ToString());
                 }
                 conn.Close();
 
@@ -198,7 +237,64 @@ namespace WpfApplication1
                 Console.WriteLine(ex.ToString()); //this is used for debug purposes
 
             }
+            try
+            {
+
+                Console.WriteLine("Connecting to MySQL...");//this is used for debug purposes
+                conn.Open();
+
+                string sql_signup = "select * from testdb.revision_stats where username=" + '"' + $"{ search_name }" + '"';
+                Console.WriteLine(sql_signup);
+                MySqlCommand cmd = new MySqlCommand(sql_signup, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    // prop1.Content = "propaideia tou 1=" + (rdr["prop1"].ToString());
+
+                    Rstats1 = Int32.Parse(rdr["prop1"].ToString());
+                    Rstats2 = Int32.Parse(rdr["prop2"].ToString());
+                    Rstats3 = Int32.Parse(rdr["prop3"].ToString());
+                    Rstats4 = Int32.Parse(rdr["prop4"].ToString());
+                    Rstats5 = Int32.Parse(rdr["prop5"].ToString());
+                    Rstats6 = Int32.Parse(rdr["prop6"].ToString());
+                    Rstats7 = Int32.Parse(rdr["prop7"].ToString());
+                    Rstats8 = Int32.Parse(rdr["prop8"].ToString());
+                    Rstats9 = Int32.Parse(rdr["prop9"].ToString());
+                    Rstats10 = Int32.Parse(rdr["prop10"].ToString());
+                    conn.Close();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Υπήρξε πρόβλημα σύνδεσης1");
+                Console.WriteLine(ex.ToString()); //this is used for debug purposes
+                conn.Close();
+            }
             //conn.Close();
+
+
+            string result1 = Compute(stats1, Rstats1);
+            string result2 = Compute(stats2, Rstats2);
+            string result3 = Compute(stats3, Rstats3);
+            string result4 = Compute(stats4, Rstats4);
+            string result5 = Compute(stats5, Rstats5);
+            string result6 = Compute(stats6, Rstats6);
+            string result7 = Compute(stats7, Rstats7);
+            string result8 = Compute(stats8, Rstats8);
+            string result9 = Compute(stats9, Rstats9);
+            string result10 = Compute(stats10, Rstats10);
+
+            prop1.Content = "Αποτελέσματα στην προπαίδεια του 1: " + result1.ToString();
+            prop2.Content = "Αποτελέσματα στην προπαίδεια του 2: " + result2.ToString();
+            prop3.Content = "Αποτελέσματα στην προπαίδεια του 3: " + result3.ToString();
+            prop4.Content = "Αποτελέσματα στην προπαίδεια του 4: " + result4.ToString();
+            prop5.Content = "Αποτελέσματα στην προπαίδεια του 5: " + result5.ToString();
+            prop6.Content = "Αποτελέσματα στην προπαίδεια του 6: " + result6.ToString();
+            prop7.Content = "Αποτελέσματα στην προπαίδεια του 7: " + result7.ToString();
+            prop8.Content = "Αποτελέσματα στην προπαίδεια του 8: " + result8.ToString();
+            prop9.Content = "Αποτελέσματα στην προπαίδεια του 9: " + result9.ToString();
+            prop10.Content = "Αποτελέσματα στην προπαίδεια του 10: " + result10.ToString();
             Console.WriteLine("populating done."); //this is used for debug purposes
         }
         private void Log_out(object sender, MouseButtonEventArgs e)

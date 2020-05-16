@@ -542,49 +542,6 @@ namespace WpfApplication1
             newtest.q10.Content = "10) " + RandomNumber10 + " x " + q10;
             newtest.right_answer10 = RandomNumber10 * q10;
             revision = true;
-
-
-
-
-
-
-
-
-            /*q1 = Create_Numbers();
-            q2 = Create_Numbers();
-            q3 = Create_Numbers();
-            q4 = Create_Numbers();
-            q5 = Create_Numbers();
-            q6 = Create_Numbers();
-            q7 = Create_Numbers();
-            q8 = Create_Numbers();
-            q9 = Create_Numbers();
-            q10 = Create_Numbers();
-
-           
-           var newtest = new test();
-           newtest.retake.Visibility = Visibility.Visible;
-           newtest.number.Content = "Σε όλη την προπαίδεια";
-           newtest.q1.Content = "1) " + 1 + " x " + q1;
-           newtest.right_answer1 = 1 * q1;
-           newtest.q2.Content = "2) " + 2 + " x " + q2;
-           newtest.right_answer2 = 2 * q2;
-           newtest.q3.Content = "3) " + 6 + " x " + q3;
-           newtest.right_answer3 = 6 * q3;
-           newtest.q4.Content = "4) " + 2 + " x " + q4;
-           newtest.right_answer4 = 2 * q4;
-           newtest.q5.Content = "5) " + 10 + " x " + q5;
-           newtest.right_answer5 = 10 * q5;
-           newtest.q6.Content = "6) " + 6 + " x " + q6;
-           newtest.right_answer6 = 6 * q6;
-           newtest.q7.Content = "7) " + 7 + " x " + q7;
-           newtest.right_answer7 = 7 * q7;
-           newtest.q8.Content = "8) " + 4 + " x " + q8;
-           newtest.right_answer8 = 4 * q8;
-           newtest.q9.Content = "9) " + 9 + " x " + q9;
-           newtest.right_answer9 = 9 * q9;
-           newtest.q10.Content = "10) " + 1 + " x " + q10;
-           newtest.right_answer10 = 1 * q10;*/
             newtest.i = i;
             this.Close();
             newtest.Show();

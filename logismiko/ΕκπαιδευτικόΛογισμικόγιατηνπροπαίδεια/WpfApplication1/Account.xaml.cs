@@ -216,9 +216,10 @@ namespace WpfApplication1
                     Rstats8 = Int32.Parse(rdr1["prop8"].ToString());
                     Rstats9 = Int32.Parse(rdr1["prop9"].ToString());
                     Rstats10 = Int32.Parse(rdr1["prop10"].ToString());
-                    conn1.Close();
+                   
 
                 }
+                conn1.Close();
             }
             catch (Exception ex)
             {
@@ -226,15 +227,17 @@ namespace WpfApplication1
                 Console.WriteLine(ex.ToString()); //this is used for debug purposes
                 conn1.Close();
             }
-            MessageBox.Show("Υπήρξε πρόβλημα σύνδεσης1");
+            
         }
-        public string Compute(int one, int two)
+        public string Compute(decimal one, decimal two)
         {
             string value = "Not Found";
             try
             {
-                int math = (one + two) / 11;
-
+                MessageBox.Show(one.ToString());
+                MessageBox.Show(two.ToString());
+                decimal math = (one + two) / 11m ;
+                MessageBox.Show(math.ToString());
                 value = math.ToString();
             }
             catch

@@ -95,8 +95,9 @@ namespace WpfApplication1
              catch (Exception ex)
              {
                  MessageBox.Show("Σύνδεση ανεπιτυχής");
-                 Console.WriteLine(ex.ToString()); //this is used for debug purposes
-                 this.Close();
+                this.Close();
+                Console.WriteLine(ex.ToString()); //this is used for debug purposes
+                
              }
              conn.Close();
              Console.WriteLine("Done."); //this is used for debug purposes
@@ -134,7 +135,7 @@ namespace WpfApplication1
               Console.WriteLine("Connecting to MySQL...");//this is used for debug purposes
                 conn.Open();
 
-                string sql_signup = "insert into testdb.users(username, pass, fullname, admin_status) values  (" + '"' + $"{ usernameR }" + '"' + "," + '"' + $"{ passwordR }" + '"' + "," + '"' + $"{ fullnameR }" + '"' + "," + '"' + $"{ emailR }" + '"' + "," + $"{ admin_status } )";
+                string sql_signup = "insert into testdb.users(username, pass, fullname,email, admin_status) values  (" + '"' + $"{ usernameR }" + '"' + "," + '"' + $"{ passwordR }" + '"' + "," + '"' + $"{ fullnameR }" + '"' + "," + '"' + $"{ emailR }" + '"' + "," + $"{ admin_status } )";
                 Console.WriteLine(sql_signup);
                 MySqlCommand cmd = new MySqlCommand(sql_signup, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
@@ -145,7 +146,7 @@ namespace WpfApplication1
                 {
                     Console.WriteLine("Connecting to MySQL...");//this is used for debug purposes
                     conn.Open(); 
-                    string sql_stats = ("insert into testdb.stats(username) values(" + '"' + $"{ usernameR }" + '"' + ")");
+                    string sql_stats = ("insert into testdb.stats(username,prop1,prop2,prop3,prop4,prop5,prop6,prop7,prop8,prop9,prop10) values(" + '"' + $"{ usernameR }" + '"' + ",0,0,0,0,0,0,0,0,0,0)");
                     Console.WriteLine(sql_stats);
                     MySqlCommand cmd_stats = new MySqlCommand(sql_stats, conn);
                     MySqlDataReader rdr_stats = cmd_stats.ExecuteReader();
@@ -157,13 +158,14 @@ namespace WpfApplication1
                 {
                     Console.WriteLine("Connecting to MySQL...");//this is used for debug purposes
                     conn.Open();
-                    string sql_rstats = ("insert into testdb.revision_stats(username) values(" + '"' + $"{ usernameR }" + '"' + ")");
+                    string sql_rstats = ("insert into testdb.revision_stats(username,prop1,prop2,prop3,prop4,prop5,prop6,prop7,prop8,prop9,prop10) values(" + '"' + $"{ usernameR }" + '"' + ",0,0,0,0,0,0,0,0,0,0)");
                     Console.WriteLine(sql_rstats);
                     MySqlCommand cmd_rstats = new MySqlCommand(sql_rstats, conn);
                     MySqlDataReader rdr_rstats = cmd_rstats.ExecuteReader();
                     MessageBox.Show("Εγγραφή επιτυχής");
                     conn.Close();
                 }
+
             }
             catch (Exception ex)
             {

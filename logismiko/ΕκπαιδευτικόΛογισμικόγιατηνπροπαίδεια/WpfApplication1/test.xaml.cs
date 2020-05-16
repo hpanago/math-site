@@ -73,8 +73,10 @@ namespace WpfApplication1
                         an1.Background = Brushes.Green;
                         progressBar1.Value += 10;
                         apotelesmata += 1;
-                        swstes_apadhseis[προπαίδειες.q1] += 1;
-                      
+                        if (προπαίδειες.revision == true)
+                        {
+                            swstes_apadhseis[προπαίδειες.q1] += 1;
+                        }
                     }
                     else
                     {
@@ -106,7 +108,10 @@ namespace WpfApplication1
                         an2.Background = Brushes.Green;
                         progressBar1.Value += 10;
                         apotelesmata += 1;
-                        swstes_apadhseis[προπαίδειες.q2] += 1;
+                        if (προπαίδειες.revision == true)
+                        {
+                            swstes_apadhseis[προπαίδειες.q2] += 1;
+                        }
 
                     }
                     else
@@ -139,7 +144,10 @@ namespace WpfApplication1
                         an3.Background = Brushes.Green;
                         progressBar1.Value += 10;
                         apotelesmata += 1;
-                        swstes_apadhseis[προπαίδειες.q3] += 1;
+                        if (προπαίδειες.revision == true)
+                        {
+                            swstes_apadhseis[προπαίδειες.q3] += 1;
+                        }
 
 
                     }
@@ -173,7 +181,10 @@ namespace WpfApplication1
                         an4.Background = Brushes.Green;
                         progressBar1.Value += 10;
                         apotelesmata += 1;
-                        swstes_apadhseis[προπαίδειες.q4] += 1;
+                        if (προπαίδειες.revision == true)
+                        {
+                            swstes_apadhseis[προπαίδειες.q4] += 1;
+                        }
 
                     }
                     else
@@ -206,7 +217,10 @@ namespace WpfApplication1
                         an5.Background = Brushes.Green;
                         progressBar1.Value += 10;
                         apotelesmata += 1;
-                        swstes_apadhseis[προπαίδειες.q5] += 1;
+                        if (προπαίδειες.revision == true)
+                        {
+                            swstes_apadhseis[προπαίδειες.q5] += 1;
+                        }
 
                     }
                     else
@@ -239,7 +253,10 @@ namespace WpfApplication1
                         an6.Background = Brushes.Green;
                         progressBar1.Value += 10;
                         apotelesmata += 1;
-                        swstes_apadhseis[προπαίδειες.q6] += 1;
+                        if (προπαίδειες.revision == true)
+                        {
+                            swstes_apadhseis[προπαίδειες.q6] += 1;
+                        }
 
                     }
                     else
@@ -272,7 +289,10 @@ namespace WpfApplication1
                         an7.Background = Brushes.Green;
                         progressBar1.Value += 10;
                         apotelesmata += 1;
-                        swstes_apadhseis[προπαίδειες.q7] += 1;
+                        if (προπαίδειες.revision == true)
+                        {
+                            swstes_apadhseis[προπαίδειες.q7] += 1;
+                        }
 
                     }
                     else
@@ -305,7 +325,10 @@ namespace WpfApplication1
                         an8.Background = Brushes.Green;
                         progressBar1.Value += 10;
                         apotelesmata += 1;
-                        swstes_apadhseis[προπαίδειες.q8] += 1;
+                        if (προπαίδειες.revision == true)
+                        {
+                            swstes_apadhseis[προπαίδειες.q8] += 1;
+                        }
 
                     }
                     else
@@ -338,7 +361,10 @@ namespace WpfApplication1
                         an9.Background = Brushes.Green;
                         progressBar1.Value += 10;
                         apotelesmata += 1;
-                        swstes_apadhseis[προπαίδειες.q9] += 1;
+                        if (προπαίδειες.revision == true)
+                        {
+                            swstes_apadhseis[προπαίδειες.q9] += 1;
+                        }
 
                     }
                     else
@@ -371,7 +397,10 @@ namespace WpfApplication1
                         an10.Background = Brushes.Green;
                         progressBar1.Value += 10;
                         apotelesmata += 1;
-                        swstes_apadhseis[προπαίδειες.q10] += 1;
+                        if (προπαίδειες.revision == true)
+                        {
+                            swstes_apadhseis[προπαίδειες.q10] += 1;
+                        }
 
                     }
                     else

@@ -182,6 +182,52 @@ namespace WpfApplication1
         public static int Rstats9;
         public static int Rstats10;
 
+        public void Get_Rev(string search_name)
+        {
+            string connStr1 = @"server=localhost;userid=root;password=root;database=testdb";
+            MySqlConnection conn1 = new MySqlConnection(connStr1);
+            try
+            {
+                Console.WriteLine("Connecting to MySQL...");//this is used for debug purposes
+                try
+                {
+                    conn1.Open();
+                }
+                catch
+                {
+                    MessageBox.Show("error in opening socket");
+                }
+
+                string sql_1 = "select * from testdb.revision_stats where username=" + '"' + $"{ search_name }" + '"';
+                Console.WriteLine(sql_1);
+                MySqlCommand cmd1 = new MySqlCommand(sql_1, conn1);
+                MySqlDataReader rdr1 = cmd1.ExecuteReader();
+                while (rdr1.Read())
+                {
+                    // prop1.Content = "propaideia tou 1=" + (rdr["prop1"].ToString());
+
+                    Rstats1 = Int32.Parse(rdr1["prop1"].ToString());
+                    Rstats2 = Int32.Parse(rdr1["prop2"].ToString());
+                    Rstats3 = Int32.Parse(rdr1["prop3"].ToString());
+                    Rstats4 = Int32.Parse(rdr1["prop4"].ToString());
+                    Rstats5 = Int32.Parse(rdr1["prop5"].ToString());
+                    Rstats6 = Int32.Parse(rdr1["prop6"].ToString());
+                    Rstats7 = Int32.Parse(rdr1["prop7"].ToString());
+                    Rstats8 = Int32.Parse(rdr1["prop8"].ToString());
+                    Rstats9 = Int32.Parse(rdr1["prop9"].ToString());
+                    Rstats10 = Int32.Parse(rdr1["prop10"].ToString());
+                    conn1.Close();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Υπήρξε πρόβλημα σύνδεσης1");
+                Console.WriteLine(ex.ToString()); //this is used for debug purposes
+                conn1.Close();
+            }
+            MessageBox.Show("Υπήρξε πρόβλημα σύνδεσης1");
+        }
         public string Compute(int one, int two)
         {
             string value = "Not Found";
@@ -199,6 +245,7 @@ namespace WpfApplication1
         }
         private void Populate_List(string search_name)
         {
+            
             string connStr = @"server=localhost;userid=root;password=root;database=testdb";
 
             MySqlConnection conn = new MySqlConnection(connStr);
@@ -235,44 +282,10 @@ namespace WpfApplication1
             {
                 MessageBox.Show("Υπήρξε πρόβλημα σύνδεσης");
                 Console.WriteLine(ex.ToString()); //this is used for debug purposes
-
-            }
-            try
-            {
-
-                Console.WriteLine("Connecting to MySQL...");//this is used for debug purposes
-                conn.Open();
-
-                string sql_signup = "select * from testdb.revision_stats where username=" + '"' + $"{ search_name }" + '"';
-                Console.WriteLine(sql_signup);
-                MySqlCommand cmd = new MySqlCommand(sql_signup, conn);
-                MySqlDataReader rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
-                    // prop1.Content = "propaideia tou 1=" + (rdr["prop1"].ToString());
-
-                    Rstats1 = Int32.Parse(rdr["prop1"].ToString());
-                    Rstats2 = Int32.Parse(rdr["prop2"].ToString());
-                    Rstats3 = Int32.Parse(rdr["prop3"].ToString());
-                    Rstats4 = Int32.Parse(rdr["prop4"].ToString());
-                    Rstats5 = Int32.Parse(rdr["prop5"].ToString());
-                    Rstats6 = Int32.Parse(rdr["prop6"].ToString());
-                    Rstats7 = Int32.Parse(rdr["prop7"].ToString());
-                    Rstats8 = Int32.Parse(rdr["prop8"].ToString());
-                    Rstats9 = Int32.Parse(rdr["prop9"].ToString());
-                    Rstats10 = Int32.Parse(rdr["prop10"].ToString());
-                    conn.Close();
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Υπήρξε πρόβλημα σύνδεσης1");
-                Console.WriteLine(ex.ToString()); //this is used for debug purposes
                 conn.Close();
             }
-            //conn.Close();
 
+            Get_Rev(search_name);
 
             string result1 = Compute(stats1, Rstats1);
             string result2 = Compute(stats2, Rstats2);

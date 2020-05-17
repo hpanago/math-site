@@ -16,18 +16,18 @@
         <TextBox x:Name="passwordS" HorizontalAlignment="Left" Margin="53.216,217.38,0,196.12" TextWrapping="Wrap" Text="TextBox" Width="88" Background="{x:Null}" BorderBrush="#FFF9F9F9" BorderThickness="2" Foreground="#FFFDFDFD" FontFamily="Mistral" FontSize="16" TextChanged="TextBox_Focus"/>
         <TextBox x:Name="fullnameS" HorizontalAlignment="Left" Height="34.5" Margin="53.216,0,0,135.415" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Bottom" Width="88" Background="{x:Null}" BorderBrush="#FFF9F9F9" BorderThickness="2" Foreground="#FFFDFDFD" FontFamily="Mistral" FontSize="16" TextChanged="TextBox_Focus"/>
         <TextBox x:Name="emailS" HorizontalAlignment="Left" Height="34.5" Margin="53.216,0,0,70.469" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Bottom" Width="88" Background="{x:Null}" BorderBrush="#FFF9F9F9" BorderThickness="2" Foreground="#FFFDFDFD" FontFamily="Mistral" FontSize="16" TextChanged="TextBox_Focus" RenderTransformOrigin="0.386,1.813"/>
-        <ListView x:Name="listView" Margin="285.188,109,66.299,98">
-            <ListViewItem  Content="Αποτελέσματα από τις εξετάσεις"  Margin="0" Name="prop1"/>
-            <ListViewItem  Content="Αποτελέσματα από τις εξετάσεις"  Margin="0" Name="prop2"/>
-            <ListViewItem  Content="Αποτελέσματα από τις εξετάσεις"  Margin="0" Name="prop3"/>
-            <ListViewItem  Content="Αποτελέσματα από τις εξετάσεις"  Margin="0" Name="prop4"/>
-            <ListViewItem  Content="Αποτελέσματα από τις εξετάσεις"  Margin="0" Name="prop5"/>
-            <ListViewItem  Content="Αποτελέσματα από τις εξετάσεις" Margin="0" Name="prop6"/>
+        <ListView x:Name="listView"  Margin="291.188,109,60.299,98">
+            <ListViewItem Content="Αποτελέσματα εξετάσεων μαθητών για τις εξετάσεις της προπαίδειας"  MinWidth="500"   Margin="0" Name="prop1"/>
+            <ListViewItem   MinWidth="500" Margin="0" Name="prop2"/>
+            <ListViewItem  MinWidth="500"   Margin="0" Name="prop3"/>
+            <ListViewItem   MinWidth="500"  Margin="0" Name="prop4"/>
+            <ListViewItem   MinWidth="500"   Margin="0" Name="prop5"/>
+            <ListViewItem  MinWidth="500"    Margin="0" Name="prop6"/>
 
-            <ListViewItem  Content="Αποτελέσματα από τις εξετάσεις"  Margin="0" Name="prop7"/>
-            <ListViewItem  Content="Αποτελέσματα από τις εξετάσεις"  Margin="0" Name="prop8"/>
-            <ListViewItem  Content="Αποτελέσματα από τις εξετάσεις" Margin="0" Name="prop9"/>
-            <ListViewItem  Content="Αποτελέσματα από τις εξετάσεις" Margin="0" Name="prop10"/>
+            <ListViewItem  MinWidth="500"    Margin="0" Name="prop7"/>
+            <ListViewItem   MinWidth="500"   Margin="0" Name="prop8"/>
+            <ListViewItem  MinWidth="500"   Margin="0" Name="prop9"/>
+            <ListViewItem  MinWidth="500" Margin="0" Name="prop10" />
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>

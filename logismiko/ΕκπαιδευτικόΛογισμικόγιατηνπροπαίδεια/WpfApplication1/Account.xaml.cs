@@ -302,18 +302,20 @@ namespace WpfApplication1
             string result9 = Compute(stats9, Rstats9);
             string result10 = Compute(stats10, Rstats10);
 
-            prop1.Content = "Αποτελέσματα στην προπαίδεια του 1: " + result1.ToString();
-            prop2.Content = "Αποτελέσματα στην προπαίδεια του 2: " + result2.ToString();
-            prop3.Content = "Αποτελέσματα στην προπαίδεια του 3: " + result3.ToString();
-            prop4.Content = "Αποτελέσματα στην προπαίδεια του 4: " + result4.ToString();
-            prop5.Content = "Αποτελέσματα στην προπαίδεια του 5: " + result5.ToString();
-            prop6.Content = "Αποτελέσματα στην προπαίδεια του 6: " + result6.ToString();
-            prop7.Content = "Αποτελέσματα στην προπαίδεια του 7: " + result7.ToString();
-            prop8.Content = "Αποτελέσματα στην προπαίδεια του 8: " + result8.ToString();
-            prop9.Content = "Αποτελέσματα στην προπαίδεια του 9: " + result9.ToString();
+           // listView.Items.Clear(); this in fact disables the listview
+
+            prop1.Content = "Αποτελέσματα στην προπαίδεια του 1: " + result1.ToString() + "%";
+            prop2.Content = "Αποτελέσματα στην προπαίδεια του 2: " + result2.ToString() + "%";
+            prop3.Content = "Αποτελέσματα στην προπαίδεια του 3: " + result3.ToString() + "%";
+            prop4.Content = "Αποτελέσματα στην προπαίδεια του 4: " + result4.ToString() + "%";
+            prop5.Content = "Αποτελέσματα στην προπαίδεια του 5: " + result5.ToString() + "%";
+            prop6.Content = "Αποτελέσματα στην προπαίδεια του 6: " + result6.ToString() + "%";
+            prop7.Content = "Αποτελέσματα στην προπαίδεια του 7: " + result7.ToString() + "%";
+            prop8.Content = "Αποτελέσματα στην προπαίδεια του 8: " + result8.ToString() + "%";
+            prop9.Content = "Αποτελέσματα στην προπαίδεια του 9: " + result9.ToString() + "%";
             prop10.Content = "Αποτελέσματα στην προπαίδεια του 10: " + result10.ToString();
+            //Content="Αποτελέσματα εξετάσεων μαθητών για τις εξετάσεις της προπαίδειας"
             Console.WriteLine("populating done."); //this is used for debug purposes
-            
         }
         private void Log_out(object sender, MouseButtonEventArgs e)
         {
@@ -331,6 +333,7 @@ namespace WpfApplication1
             }
         }
 
+        
         private void Search(object sender, RoutedEventArgs e)
         {
             string name = search_box.Text;

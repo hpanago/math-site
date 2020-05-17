@@ -110,6 +110,7 @@ namespace WpfApplication1
             string usernameR = UsernameBoxR.Text;
             string passwordR = passwordBoxR.Password;
             string fullnameR = fullname.Text;
+            string emailR = emailR.Text;
             bool admin_status = false;
 
             if (teacher.IsChecked == true && student.IsChecked == false)

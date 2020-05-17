@@ -36,7 +36,7 @@
                 <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
             </Button.Background>
         </Button>
-        <TextBox x:Name="emailR" Height="22.75" Margin="281.341,0,151.659,107.554" TextWrapping="Wrap" Text="Email" VerticalAlignment="Bottom" BorderBrush="#FFF7F1F1" Foreground="#FFF7F1F1">
+        <TextBox x:Name="email" Height="22.75" Margin="281.341,0,151.659,107.554" TextWrapping="Wrap" Text="Email" VerticalAlignment="Bottom" BorderBrush="#FFF7F1F1" Foreground="#FFF7F1F1">
             <TextBox.Background>
                 <SolidColorBrush Color="White" Opacity="0"/>
             </TextBox.Background>

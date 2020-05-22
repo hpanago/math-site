@@ -98,27 +98,7 @@ namespace WpfApplication1
             tipsarray[7]= "Διπλασίασε τον αριθμό τρείς φορές.Για παράδειγμα 8×6: το διπλάσιο του 6 είναι 12,το διπλάσιο του 12 είναι 24,το διπλάσιο του 24 είναι 48";
             tipsarray[8]= "Πολλαπλασίασε τον αριθμό με το δέκα και μετά αφαίρεσαι τον αριθμό.Για παράδειγμα 9×6 = 10×6−6 = 60−6 = 54";
             tipsarray[9]="Το αποτέλεσμα είναι ο αριθμός που πολλαπλασιάζεται με ένα μηδενικό δίπλα του";
-            /*if (ifprop==true)//2.3 ημιτελειωμενο
-             {
-              MessageBoxResult retry = MessageBox.Show("Δεν έχεις μάθει καλά την προπαίδεια του 1.Πρέπει να την ξαναδιαβάσεις",  MessageBoxButton.YesNo);
-              switch (exit)
-               {
-                case MessageBoxResult.Yes:
-                    var newprop = new προπαιδειες();
-                     anathesi(1, tipsarray[0]);
-                    newprop.Show();
-                    this.Close();
-                    break;
-                case MessageBoxResult.No:
-                    break;
-
-               }
-              MessageBox.Show="
-             }
-             else if()
-             {
              
-             }*/
         }
         Boolean logIn = false;
         

@@ -16,7 +16,7 @@
         <TextBox x:Name="passwordS" HorizontalAlignment="Left" Margin="53.216,217.38,0,196.12" TextWrapping="Wrap" Text="TextBox" Width="88" Background="{x:Null}" BorderBrush="#FFF9F9F9" BorderThickness="2" Foreground="#FFFDFDFD" FontFamily="Mistral" FontSize="16" TextChanged="TextBox_Focus"/>
         <TextBox x:Name="fullnameS" HorizontalAlignment="Left" Height="34.5" Margin="53.216,0,0,135.415" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Bottom" Width="88" Background="{x:Null}" BorderBrush="#FFF9F9F9" BorderThickness="2" Foreground="#FFFDFDFD" FontFamily="Mistral" FontSize="16" TextChanged="TextBox_Focus"/>
         <TextBox x:Name="emailS" HorizontalAlignment="Left" Height="34.5" Margin="53.216,0,0,70.469" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Bottom" Width="88" Background="{x:Null}" BorderBrush="#FFF9F9F9" BorderThickness="2" Foreground="#FFFDFDFD" FontFamily="Mistral" FontSize="16" TextChanged="TextBox_Focus" RenderTransformOrigin="0.386,1.813"/>
-        <ListView x:Name="listView"  Margin="291.188,109,60.299,98">
+        <ListView x:Name="listView"  Margin="274.261,82.563,77.226,124.437" RenderTransformOrigin="0.454,0.3">
             <ListViewItem Content="Αποτελέσματα εξετάσεων μαθητών για τις εξετάσεις της προπαίδειας"  MinWidth="500"   Margin="0" Name="prop1"/>
             <ListViewItem   MinWidth="500" Margin="0" Name="prop2"/>
             <ListViewItem  MinWidth="500"   Margin="0" Name="prop3"/>
@@ -71,5 +71,14 @@
         <Label x:Name="email_title" Content="email" Height="30.092" Margin="164.188,343.031,418.595,0" VerticalAlignment="Top" Cursor="None" FontFamily="Mistral" FontSize="16"  TextOptions.TextHintingMode="Fixed" Background="{x:Null}" Foreground="#FFF7F1F1" RenderTransformOrigin="0.401,7.089"/>
         <Label x:Name="fullname_title" Content="Fullaname" Height="30.092" Margin="164.188,282.493,418.595,0" VerticalAlignment="Top" Cursor="None" FontFamily="Mistral" FontSize="16"  TextOptions.TextHintingMode="Fixed" Background="{x:Null}" Foreground="#FFF7F1F1" RenderTransformOrigin="0.473,4.904"/>
         <Label x:Name="password_title" Content="password" Height="30.092" Margin="164.188,221.788,418.595,0" VerticalAlignment="Top" Cursor="None" FontFamily="Mistral" FontSize="16"  TextOptions.TextHintingMode="Fixed" Background="{x:Null}" Foreground="#FFF7F1F1"/>
+        <Button x:Name="check" Content="Χρειάζεσαι επανάληψη;" Margin="352.216,363.123,0,0" Width="182" Background="{x:Null}" Foreground="#FFF9F9F9" FontFamily="Mistral" FontSize="16" Height="42" Cursor="Hand" VerticalAlignment="Top" HorizontalAlignment="Left" Click="Check" RenderTransformOrigin="1.39,6.518">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF16563B" Offset="1"/>
+                    <GradientStop Color="White"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
     </Grid>
 </Window>

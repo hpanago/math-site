@@ -23,7 +23,7 @@ namespace WpfApplication1
     /// </summary>
     public partial class Account : Window
     {
-      
+
         public Account()
         {
             InitializeComponent();
@@ -38,7 +38,7 @@ namespace WpfApplication1
             };
             Populate_from_db();
             if (Αρχική.admin == false) {
-              Populate_List(username);
+                Populate_List(username);
             }
         }
 
@@ -58,7 +58,7 @@ namespace WpfApplication1
 
         private void Populate_from_db()
         {
-            string connStr = @"server=localhost;userid=root;password=;database=testdb";
+            string connStr = @"server=localhost;userid=root;password=root;database=testdb";
 
             MySqlConnection conn = new MySqlConnection(connStr);
             try
@@ -78,14 +78,14 @@ namespace WpfApplication1
                     emailS.Text = (rdr["email"].ToString());
                     fullnameS.Text = (rdr["fullname"].ToString());
                 }
-                    conn.Close();
+                conn.Close();
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Υπήρξε πρόβλημα σύνδεσης");
                 Console.WriteLine(ex.ToString()); //this is used for debug purposes
-               
+
             }
             //conn.Close();
             Console.WriteLine("signup done."); //this is used for debug purposes
@@ -185,19 +185,12 @@ namespace WpfApplication1
 
         public void Get_Rev(string search_name)
         {
-            string connStr1 = @"server=localhost;userid=root;password=;database=testdb";
+            string connStr1 = @"server=localhost;userid=root;password=root;database=testdb";
             MySqlConnection conn1 = new MySqlConnection(connStr1);
             try
             {
                 Console.WriteLine("Connecting to MySQL...");//this is used for debug purposes
-               // try
-              //  {
-               //     conn1.Open();
-             //   }
-             //   catch
-              //  {
-             //       MessageBox.Show("error in opening socket");
-               // }
+                conn1.Open();
 
                 string sql_1 = "select * from testdb.revision_stats where username=" + '"' + $"{ search_name }" + '"';
                 Console.WriteLine(sql_1);
@@ -217,7 +210,7 @@ namespace WpfApplication1
                     Rstats8 = Int32.Parse(rdr1["prop8"].ToString());
                     Rstats9 = Int32.Parse(rdr1["prop9"].ToString());
                     Rstats10 = Int32.Parse(rdr1["prop10"].ToString());
-                   
+
 
                 }
                 conn1.Close();
@@ -228,17 +221,17 @@ namespace WpfApplication1
                 Console.WriteLine(ex.ToString()); //this is used for debug purposes
                 conn1.Close();
             }
-            
+
         }
         public string Compute(float one, float two)
         {
             string value = "Not Found";
             try
             {
-               // MessageBox.Show(one.ToString());
-               // MessageBox.Show(two.ToString());
-                float math = ((one + two) / 11) *100;
-               // MessageBox.Show(math.ToString());
+                // MessageBox.Show(one.ToString());
+                // MessageBox.Show(two.ToString());
+                float math = ((one + two) / 11) * 100;
+                // MessageBox.Show(math.ToString());
                 value = Math.Round(math, 2).ToString();
             }
             catch
@@ -249,8 +242,8 @@ namespace WpfApplication1
         }
         private void Populate_List(string search_name)
         {
-            
-            string connStr = @"server=localhost;userid=root;password=;database=testdb";
+
+            string connStr = @"server=localhost;userid=root;password=root;database=testdb";
 
             MySqlConnection conn = new MySqlConnection(connStr);
             try
@@ -302,7 +295,6 @@ namespace WpfApplication1
             string result9 = Compute(stats9, Rstats9);
             string result10 = Compute(stats10, Rstats10);
 
-           // listView.Items.Clear(); this in fact disables the listview
 
             prop1.Content = "Αποτελέσματα στην προπαίδεια του 1: " + result1.ToString() + "%";
             prop2.Content = "Αποτελέσματα στην προπαίδεια του 2: " + result2.ToString() + "%";
@@ -313,10 +305,104 @@ namespace WpfApplication1
             prop7.Content = "Αποτελέσματα στην προπαίδεια του 7: " + result7.ToString() + "%";
             prop8.Content = "Αποτελέσματα στην προπαίδεια του 8: " + result8.ToString() + "%";
             prop9.Content = "Αποτελέσματα στην προπαίδεια του 9: " + result9.ToString() + "%";
-            prop10.Content = "Αποτελέσματα στην προπαίδεια του 10: " + result10.ToString()+"%";
-            //Content="Αποτελέσματα εξετάσεων μαθητών για τις εξετάσεις της προπαίδειας"
+            prop10.Content = "Αποτελέσματα στην προπαίδεια του 10: " + result10.ToString() + "%";
             Console.WriteLine("populating done."); //this is used for debug purposes
+            
         }
+
+        private void Check(object sender, RoutedEventArgs e)
+        {
+            string message = "Φαίνεται πως χρειάζεσαι επανάληψη στις προπαίδειες των παρακάτω αριθμών: ";
+            string okmessage = "Φαίνεται πως δεν χρειάζεσαι επανάληψη! Μπράβο!";
+            string message1 = "";
+            string message2 = "";
+            string message3 = "";
+            string message4 = "";
+            string message5 = "";
+            string message6 = "";
+            string message7 = "";
+            string message8 = "";
+            string message9 = "";
+            string message10 = "";
+
+            int needs_rev = 0;
+            if (stats1+Rstats1 <= 5)
+            {
+                needs_rev += 1;
+                message1 = Environment.NewLine + "Προπαίδεια του 1";
+                
+            }
+            if (stats2 + Rstats2 <= 5)
+            {
+                needs_rev += 1;
+                message2 = Environment.NewLine + "Προπαίδεια του 2";
+
+            }
+            if (stats3 + Rstats3 <= 5)
+            {
+                needs_rev += 1;
+                message3 = Environment.NewLine + "Προπαίδεια του 3";
+
+            }
+            if (stats4 + Rstats4 <= 5)
+            {
+                needs_rev += 1;
+                message4 = Environment.NewLine +  "Προπαίδεια του 4";
+
+            }
+            if (stats5 + Rstats5 <= 5)
+            {
+                needs_rev += 1;
+                message5 = Environment.NewLine +  "Προπαίδεια του 5";
+
+            }
+            if (stats6 + Rstats6 <= 5)
+            {
+                needs_rev += 1;
+                message6 = Environment.NewLine + "Προπαίδεια του 6";
+
+            }
+            if (stats7 + Rstats7 <= 5)
+            {
+                needs_rev += 1;
+                message7 = Environment.NewLine + "Προπαίδεια του 7";
+
+            }
+            if (stats8 + Rstats8 <= 5)
+            {
+                needs_rev += 1;
+                message8 = Environment.NewLine + "Προπαίδεια του 8";
+
+            }
+            if (stats9 + Rstats9 <= 5)
+            {
+                needs_rev += 1;
+                message9 = Environment.NewLine + "Προπαίδεια του 9";
+
+            }
+            if (stats10 + Rstats10 <= 5)
+            {
+                needs_rev += 1;
+                message10 = Environment.NewLine +  "Προπαίδεια του 10";
+
+            }
+            var multi = $@"{message}{message2}{message3}
+                {message4}{message5}
+                {message6}{message7}
+                {message8}{message9}
+                {message10}";
+           // var multi3 = $"{message}{message3}";
+
+            if (needs_rev == 0)
+            {
+                MessageBox.Show(okmessage);
+            }
+            else
+            {
+                MessageBox.Show(multi);
+            }
+        }
+        
         private void Log_out(object sender, MouseButtonEventArgs e)
         {
             MessageBoxResult exit = MessageBox.Show("Θέλετε να αποσυνδεθείτε", "Αποσύνδεση", MessageBoxButton.YesNo);

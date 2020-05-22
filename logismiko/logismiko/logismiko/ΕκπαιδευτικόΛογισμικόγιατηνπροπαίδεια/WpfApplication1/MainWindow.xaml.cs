@@ -85,7 +85,6 @@ namespace WpfApplication1
             this.Close();
             newForm.Show();
          }
-        //Boolean ifprop1, ifprop2, ifprop3,ifprop4, ifprop5, ifprop6, ifprop7, ifprop8, ifprop9, ifprop10;
         public MainWindow()
         {
             InitializeComponent();

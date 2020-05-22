@@ -58,7 +58,8 @@ namespace WpfApplication1
 
         private void Populate_from_db()
         {
-            string connStr = @"server=localhost;userid=root;password=root;database=testdb";
+            // string connStr = @"server=localhost;userid=root;password=root;database=testdb";
+             string connStr = @"server=localhost;userid=root;password=;database=testdb";
 
             MySqlConnection conn = new MySqlConnection(connStr);
             try
@@ -108,8 +109,8 @@ namespace WpfApplication1
             fullnameS.IsReadOnly = true;
             //now show the new values from the database
 
-            // string connStr = @"server=localhost;userid=root;password=;database=testdb";
-            string connStr = @"server=localhost;userid=root;password=root;database=testdb";
+             string connStr = @"server=localhost;userid=root;password=;database=testdb";
+            //string connStr = @"server=localhost;userid=root;password=root;database=testdb";
 
             MySqlConnection conn = new MySqlConnection(connStr);
             try
@@ -185,7 +186,7 @@ namespace WpfApplication1
 
         public void Get_Rev(string search_name)
         {
-            string connStr1 = @"server=localhost;userid=root;password=root;database=testdb";
+            string connStr1 = @"server=localhost;userid=root;password=;database=testdb";
             MySqlConnection conn1 = new MySqlConnection(connStr1);
             try
             {
@@ -243,7 +244,7 @@ namespace WpfApplication1
         private void Populate_List(string search_name)
         {
 
-            string connStr = @"server=localhost;userid=root;password=root;database=testdb";
+            string connStr = @"server=localhost;userid=root;password=;database=testdb";
 
             MySqlConnection conn = new MySqlConnection(connStr);
             try
@@ -386,12 +387,7 @@ namespace WpfApplication1
                 message10 = Environment.NewLine +  "Προπαίδεια του 10";
 
             }
-            var multi = $@"{message}{message2}{message3}
-                {message4}{message5}
-                {message6}{message7}
-                {message8}{message9}
-                {message10}";
-           // var multi3 = $"{message}{message3}";
+            var multi = $@"{message}{message1}{message2}{message3}{message4}{message5}{message6}{message7}{message8}{message9}{message10}";
 
             if (needs_rev == 0)
             {

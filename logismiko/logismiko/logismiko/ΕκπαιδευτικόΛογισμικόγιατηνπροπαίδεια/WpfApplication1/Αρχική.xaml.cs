@@ -42,8 +42,8 @@ namespace WpfApplication1
         {
             username = UsernameBox.Text;
             var newForm = new MainWindow();
-            string connStr = @"server=localhost;userid=root;password=root;database=testdb";
-            //string connStr = @"server=localhost;userid=root;password=;database=testdb";
+            //string connStr = @"server=localhost;userid=root;password=root;database=testdb";
+            string connStr = @"server=localhost;userid=root;password=;database=testdb";
             MySqlConnection conn = new MySqlConnection(connStr);
              try
              {
@@ -127,8 +127,8 @@ namespace WpfApplication1
                 MessageBox.Show("Πρέπει να επιλέξετε ανάμεσα σε μαθητής ή καθηγητής");
             }
 
-            string connStr = @"server=localhost;userid=root;password=root;database=testdb";
-          //  string connStr = @"server=localhost;userid=root;password=;database=testdb";
+           // string connStr = @"server=localhost;userid=root;password=root;database=testdb";
+            string connStr = @"server=localhost;userid=root;password=;database=testdb";
 
             MySqlConnection conn = new MySqlConnection(connStr);
             try

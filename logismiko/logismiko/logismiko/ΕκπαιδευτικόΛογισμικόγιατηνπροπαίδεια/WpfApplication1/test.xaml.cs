@@ -757,7 +757,7 @@ namespace WpfApplication1
              // this is for debbugging MessageBox.Show(logged.ToString());
 
 
-             string connStr = @"server=localhost;userid=root;password=root;database=testdb";
+             string connStr = @"server=localhost;userid=root;password=;database=testdb";
              MySqlConnection conn = new MySqlConnection(connStr);
             for (int loop = 1; loop < 11; loop++) {
                 try
@@ -800,7 +800,7 @@ namespace WpfApplication1
             // string logged = user.
             // MessageBox.Show(logged.ToString());
             string logged =  Αρχική.Get_Username();
-            string connStr = @"server=localhost;userid=root;password=root;database=testdb";
+            string connStr = @"server=localhost;userid=root;password=;database=testdb";
             MySqlConnection conn = new MySqlConnection(connStr);
             try
             {
